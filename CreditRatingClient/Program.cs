@@ -10,7 +10,7 @@ namespace GrpcGreeterClient
         static async Task Main(string[] args)
         {
             // The port number(5001) must match the port of the gRPC server.
-            var channel = GrpcChannel.ForAddress("http://localhost:5000");
+            var channel = GrpcChannel.ForAddress("https://localhost:5001");
             var client = new CreditRatingCheck.CreditRatingCheckClient(channel);
             var creditRequest = new CreditRequest { CustomerId = "id0201", Credit = 7000 };
             var reply = await client.CheckCreditRequestAsync(creditRequest);
